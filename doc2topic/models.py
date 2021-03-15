@@ -65,9 +65,8 @@ class Doc2Topic:
 		#sim = dot([embD, embW], 0, normalize=True)
 		dot_prod = dot([embD, embW], 1, normalize=False)
 		dot_prod = Reshape((1,))(dot_prod)
-
+		print(embD, embW)
 		output = Activation('sigmoid')(dot_prod)
-
 		opt = Adam(lr=lr, amsgrad=True)
 
 		self.model = Model(inputs=[inlayerD,inlayerW], outputs=[output])

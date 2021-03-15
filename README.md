@@ -4,7 +4,9 @@ This is a neural take on LDA-style topic modeling, i.e., based on a set of docum
 
 The implementation is based on a lightweight neural architecture and aims to be a scalable alternative to LDA. It readily makes use of GPU computation and has been tested successfully on 1M documents with 200 topics (on a Titan Xp card with 12GB of memory).
 
-Getting started: `python -m tests.basic.py data/my_docs.txt`
+`export PYTHONPATH="${PYTHONPATH}:{path/to/dir}/Topic_Modeling/doc2topic"`
+
+Getting started: `python -m tests/basic.py data/my_docs.txt 3 (# of topics)`
  
 ## Method
 
