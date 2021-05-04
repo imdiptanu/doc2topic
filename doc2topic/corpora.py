@@ -69,6 +69,10 @@ class DocData:
 		self.input_tokens = np.array(self.input_tokens, dtype="int32")
 		self.outputs = np.array(self.outputs)
 
+		print(self.input_docs)
+		print(self.input_tokens)
+		print(self.outputs)
+
 		#self.idx2token = dict([(i,t) for t,i in self.token2idx.items()])
 		if replace:
 			del self.docs
