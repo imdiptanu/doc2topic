@@ -133,6 +133,7 @@ class Doc2Topic:
 			topic_words[topic] = heapq.nlargest(top_n+len(stopwords), enumerate(L1normalize(self.wordvecs[:,topic])), key=lambda x:x[1])
 			topic_words[topic] = [(self.corpus.idx2token[idx], score) for idx, score in topic_words[topic] if self.corpus.idx2token[idx] not in stopwords]
 		self.topic_words = topic_words
+		print(self.topic_words)
 		return topic_words
 
 
