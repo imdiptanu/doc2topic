@@ -123,6 +123,11 @@ class Doc2Topic:
 
 	def get_topic_words(self, top_n=10, stopwords=set()):
 		self.get_wordvecs()
+		print("-----------------")
+		print(self.wordvecs)
+		self.get_docvecs()
+		print(self.docvecs)
+		print("-----------------")
 		topic_words = {}
 		for topic in range(self.wordvecs.shape[1]):
 			topic_words[topic] = heapq.nlargest(top_n+len(stopwords), enumerate(L1normalize(self.wordvecs[:,topic])), key=lambda x:x[1])
