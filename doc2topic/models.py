@@ -124,11 +124,6 @@ class Doc2Topic:
 	def get_topic_words(self, top_n=10, stopwords=set()):
 		self.get_wordvecs()
 		topic_words = {}
-		print("-----------------")
-		print(np.shape(self.wordvecs))
-		self.get_docvecs()
-		print(np.shape(self.docvecs))
-		print("-----------------")
 		for topic in range(self.wordvecs.shape[1]):
 			topic_words[topic] = heapq.nlargest(top_n+len(stopwords), enumerate(L1normalize(self.wordvecs[:,topic])), key=lambda x:x[1])
 			topic_words[topic] = [(self.corpus.idx2token[idx], score) for idx, score in topic_words[topic] if self.corpus.idx2token[idx] not in stopwords]
